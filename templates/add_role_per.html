@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加角色权限</title>
+</head>
+<body>
+<form action="" method="post">
+    <table>
+        <tr>
+            <th>角色名:</th>
+            <td>{{ role.r_name }}</td>
+        </tr>
+        <tr>
+            <th>当前权限:</th>
+            {% for per in role.permission %}
+            <td>{{ per.p_name }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    增加权限:
+    <select name="per_id">
+        {% for per in pers %}
+        <option value="{{ per.p_id }}">{{ per.p_name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

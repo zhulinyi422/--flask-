@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户角色</title>
+</head>
+<body>
+<form action="" method="post">
+<table>
+    <tr>
+        <th>用户名:</th>
+        <td>{{ user.u_name }}</td>
+    </tr>
+    <tr>
+        <th>当前角色:</th>
+        <td>{{ user.role.r_name }}</td>
+    </tr>
+修改为:
+    <select name="r_id">
+        {% for role in roles %}
+        <option value="{{ role.r_id }}">{{ role.r_name }}</option>
+        {% endfor %}
+    </select>
+</table>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
